@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+body{
+  font-family: "Kaushan Script",sans-serif;
+  
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.video-slider{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  overflow: hidden;
+  position: relative;
+}
+.video-slider .video-slide{
+  height: 100vh;
+  flex-basis: 100%;
+  position: absolute;
+  width: 100%;
+  transition: 0.5s;
+
+}
+.video-slide::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(56, 95, 53, 0.5);
+  mix-blend-mode:multiply;
+}
+.url-img{
+
+     border-radius: 50%;
+            
+}
+.video-slider .video-slide video{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-content{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  opacity: 0;
+  transition: 1s;
+  transform: translateZ(50px) rotateZ(30deg);
+}
+.video-slide.active .video-content{
+  opacity: 1;
+  transform: translateZ(0px) rotateZ(0deg);
+}
+
+.video-content h2{
+  text-shadow: 2px 2px 4px rgba(0, 0,0, 0.5);
+  color: white;
+  font-size: 32px;
+}
+.video-content p{
+  max-width: 500px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0,0, 0.5);
+}
+.video-slide .cta-btn{
+  background-color: black;
+  color: white;
+  border-radius: 32px;
+  display: inline-block;
+  text-decoration: none;
+  margin: 22px 0;
+  padding: 6px 32px;
+}
+.video-slider .video-slide:nth-child(1){
+  clip-path: polygon(0 0, 33% 0, 33% 100%, 0 100%);
+}
+.video-slider .video-slide:nth-child(2){
+  clip-path: polygon(33% 0, 67% 0, 67% 100%, 33% 100%);
+}
+.video-slider .video-slide:nth-child(3){
+  clip-path: polygon(67% 0, 100% 0, 100% 100%, 67% 100%);
+}
+.video-slider .video-slide.active{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+.title{
+  position:absolute;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  right: 24%;
+  left: 24%;
+  color: white;
+  margin: 20px auto 20px auto;
+  text-shadow: 2px 2px 4px rgba(0, 0,0, 0.5);
+}
+
+.video-slide.active .title{
+  visibility: hidden;
+}
+.title-para{
+  position:absolute;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  right: 10%;
+  left: 10%;
+  color: white;
+  margin-top: 80px;
+  text-shadow: 2px 2px 4px rgba(0, 0,0, 0.5);
+}
